@@ -1,0 +1,23 @@
+<%- include('partials/header') %>
+<main class="container">
+    <div class="page-head">
+        <h1>Inventory Manager</h1>
+        <div class="toolbar">
+            <a class="btn" href="/categories">Categories</a>
+            <a class="btn primary" href="/items">Items</a>
+        </div>
+    </div>
+    <div class="grid-2">
+        <div class="card">
+            <h3>Categories</h3>
+            <p class="muted">Organize your items into groups.</p>
+            <div class="actions"><a class="btn" href="/categories">Open</a></div>
+        </div>
+        <div class="card">
+            <h3>Items</h3>
+            <p class="muted">Add, edit, and manage inventory.</p>
+            <div class="actions"><a class="btn primary" href="/items">Open</a></div>
+        </div>
+    </div>
+</main>
+<%- include('partials/footer') %>

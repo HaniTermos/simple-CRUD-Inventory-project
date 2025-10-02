@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+<main class="container">
+    <div class="page-head">
+        <h1>Create New Category</h1>
+        <div class="toolbar">
+            <a class="btn" href="/categories">Categories</a>
+        </div>
+    </div>
+    <form class="card" action="/categories" method="POST">
+        <label for="category">Category: </label>
+        <input type="text" name="category" id="category" required>
+        <div class="actions">
+            <button class="btn primary" type="submit">Create Category</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/footer') %>

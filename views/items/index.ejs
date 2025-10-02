@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+<main class="container">
+    <div class="page-head">
+        <h1>Items</h1>
+        <div class="toolbar">
+            <input class="input" type="search" placeholder="Search items" data-search data-target=".list > li" data-text="a" />
+            <a class="btn primary" href="/items/new">Create</a>
+        </div>
+    </div>
+    <ul class="list">
+        <% items.forEach(item => { %>
+            <li>
+                <a href="/items/<%= item.id %>"><%= item.name %></a>
+                <div class="meta">
+                    <span class="pill"><%= item.category_name %></span>
+                    <span class="muted">Qty: <%= item.quantity %></span>
+                    <span class="muted">$<%= item.price %></span>
+                    <span class="muted"><%= item.description %></span>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="/items/<%= item.id %>/edit">Edit</a>
+                    <form action="/items/<%= item.id %>/delete" method="POST">
+                        <button class="btn danger" type="submit">Delete</button>
+                    </form>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</main>
+<%- include('../partials/footer') %>

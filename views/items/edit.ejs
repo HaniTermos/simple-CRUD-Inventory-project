@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+<main class="container">
+    <div class="page-head">
+        <h1>Edit Item</h1>
+        <div class="toolbar">
+            <a class="btn" href="/items">Items</a>
+        </div>
+    </div>
+    <form class="card" action="/items/<%= item.id %>" method="POST">
+        <label for="name">Item name: </label>
+        <input type="hidden" name="_method" value="PUT">
+        <input type="text" name="name" id="item" value="<%= item.name %>" required>
+        <label for="category_id">Category: </label>
+        <select name="category_id" id="category">
+            <% categories.forEach(category => { %>
+                <option value="<%= category.id %>"<%= category.id === item.category_id ? ' selected' : '' %>> <%= category.name %></option>
+            <% }) %>
+        </select>
+        <label for="description">Description: </label>
+        <input type="text" name="description" id="description" value="<%= item.description %>" required>
+        <label for="price">Price: </label>
+        <input type="number" step="0.01" name="price" id="price" value="<%= item.price %>" required>
+        <label for="quantity">Quantity: </label>
+        <input type="number" name="quantity" id="quantity" value="<%= item.quantity %>" required>
+        <div class="actions">
+            <button class="btn primary" type="submit">Save Changes</button>
+        </div>
+    </form>
+</main>
+<%- include('../partials/footer') %>
